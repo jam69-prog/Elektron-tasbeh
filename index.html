@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektron Tasbeh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+
+        /* Orqa fon uchun tashqi konteyner */
+        .background {
+            display: inline-block;
+            padding: 40px;
+            background-color: #f0f0f0; /* Orqa fon rangini o'zgartirish mumkin */
+            background-image: url('your-background-image.jpg'); /* Tasvirni almashtirish mumkin */
+            background-size: cover; /* Tasvirni moslashtiradi */
+            background-position: center;
+            border-radius: 30px;
+        }
+
+        .tasbeh {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 50% 50% 40% 40%;
+            width: 200px;
+            height: 260px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .screen {
+            width: 130px;
+            height: 60px;
+            background-color: #4caf50;
+            border-radius: 5px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-family: 'Digital', sans-serif;
+            color: #000;
+        }
+
+        .main-button {
+            width: 100px;
+            height: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            border: none;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            background: radial-gradient(circle, #d3d3d3, #a9a9a9);
+        }
+
+        .reset-btn {
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 50%;
+            border: none;
+            position: absolute;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="tasbeh">
+            <div class="screen" id="counter">00</div>
+            <button class="main-button" onclick="increase()"></button>
+            <button class="reset-btn" onclick="reset()"></button>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function increase() {
+            count++;
+            if (count < 10) {
+                document.getElementById('counter').innerText = '0' + count;
+            } else {
+                document.getElementById('counter').innerText = count;
+            }
+        }
+
+        function reset() {
+            count = 0;
+            document.getElementById('counter').innerText = '00';
+        }
+    </script>
+</body>
+</html>
